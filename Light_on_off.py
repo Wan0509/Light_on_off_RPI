@@ -67,16 +67,16 @@ while continue_reading:
 			# and set output to high (switch the light on)
 			GPIO.output(11, GPIO.HIGH)
 			
-		# outherwise is output is high
+		# outherwise if output is high
 		elif GPIO.input(11) == GPIO.HIGH:
 			# printthis message
 			print "Light will be switched off"
 			time.sleep(1)
-			#an set the output to low (switch the light off)
+			#and set the output to low (switch the light off)
 			GPIO.output(11, GPIO.LOW)
 			GPIO.cleanup()
 	else:
-		#if the RFID Card isn't the one we are looking for
-		print "Unknown/Wrong RFID Modul"
+		#if the RFID-Card isn't the one we are looking for
+		print "Unknown/Wrong RFID-Card"
 		
         
