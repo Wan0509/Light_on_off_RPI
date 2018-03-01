@@ -56,7 +56,7 @@ while continue_reading:
 		
 		# how to count the Pins
 		GPIO.setmode(GPIO.BOARD)
-		# get Pin 11  as output
+		# get Pin 11 (that's the LED)  as output
 		GPIO.setup(11, GPIO.OUT)
 		 
 		# ask if output is low
