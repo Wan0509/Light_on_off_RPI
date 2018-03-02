@@ -25,6 +25,7 @@ MIFAREReader = MFRC522.MFRC522()
 print "Welcome to the MFRC522 data read example"
 print "Press Ctrl-C to stop."
 
+
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
 while continue_reading:
     
@@ -37,26 +38,19 @@ while continue_reading:
     
     # Get the UID of the card
     (status,uid) = MIFAREReader.MFRC522_Anticoll()
-
+    
     # If we have the UID, continue
     if status == MIFAREReader.MI_OK:
 
     # Print UID
 	print uid[0],uid[1],uid[2],uid[3]
-		
-		#uid0 = uid[0]
-		#uid1 = uid[1]
-		#uid2 = uid[2]
-		#uid3 = uid[3]
-		#uid_Gesamt = uid0 + uid1 + uid2 + uid3
-		#print UID_Gesamt
 			
-	if uid[3] == 121: #fetch the right RFID-Card
+	if str(uid[0])+str(uid[1])+str(uid[2])+str(uid[3]) == "(place here the card Number)": #fetch the right RFID-Card
 
 		
 		# how to count the Pins
 		GPIO.setmode(GPIO.BOARD)
-		# get Pin 11 (that's the LED)  as output
+		# get Pin 11  as output
 		GPIO.setup(11, GPIO.OUT)
 		 
 		# ask if output is low
@@ -67,7 +61,7 @@ while continue_reading:
 			# and set output to high (switch the light on)
 			GPIO.output(11, GPIO.HIGH)
 			
-		# outherwise if output is high
+		# outherwise is output is high
 		elif GPIO.input(11) == GPIO.HIGH:
 			# printthis message
 			print "Light will be switched off"
@@ -76,7 +70,7 @@ while continue_reading:
 			GPIO.output(11, GPIO.LOW)
 			GPIO.cleanup()
 	else:
-		#if the RFID-Card isn't the one we are looking for
-		print "Unknown/Wrong RFID-Card"
+		#if the RFID Card isn't the one we are looking for
+		print "Unknown/Wrong RFID Modul"
 		
         
