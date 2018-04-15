@@ -14,6 +14,8 @@ Das RC522 RFID Modul wie folgt mit dem Raspberry verbinden:
 | RST  | 22    | GPIO25     |
 | 3.3V | 1     | 3V3        |
 
+(INFO: zum RFID Tool gehören die folgenden Bibliotheken: Read.py und MFRC522.py sowie MFRC522.pyc)
+
 
 LED wie folgt verbinden:
 
@@ -33,6 +35,10 @@ Wichtig: Bitte bei der Schaltung der LED einen 220OHM Wiederstand verwenden.
 | VCC  |  2    | 5.0 VDC    |
 | SDA  |  3    | SDA        |
 | SCL  |  5    | SCL        |
+
+(INFO: zum 2x16 LCD I2C Tool gehören die folgenden Bibliotheken: i2c_lib.py, i2c_lib.pyc sowie lcddriver.py und lcdriver.pyc)
+
+
 
 Danach die Entsprechenden Dateien heruterlagen und die Read.py im Terminal mit sudo python Read.py ausführen.
 WICHTI!: Ihr müsst nach dem Ausführen der Read.py zuerst euren Chip an den Leser halten, im Terminal wird euch dann die Entsprechende UID angezeigt aber die Schaltung der LED wird noch nicht funktionieren.
