@@ -1,3 +1,5 @@
+Hier handelt es sich um eine Einfache Schaltung einer LED anhand eines RFID Tools und anzeigen von entsprechenden Texten auf einem 16x2 LCD Display. Im Folgenden kommen die Beschreibungen der Anschlüsse:
+
 
 RFID-RC522 Modul:
 
