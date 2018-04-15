@@ -1,19 +1,7 @@
-MFRC522-python
-==============
 
-A small class to interface with the NFC reader Module MFRC522 on the Raspberry Pi.
+RFID-RC522 Modul:
 
-This is a Python port of the example code for the NFC module MF522-AN.
-
-##Requirements
-This code requires you to have SPI-Py installed from the following repository:
-https://github.com/lthiery/SPI-Py
-
-##Examples
-This repository includes a couple of examples showing how to read, write, and dump data from a chip. They are thoroughly commented, and should be easy to understand.
-
-## Pins
-You can use [this](http://i.imgur.com/y7Fnvhq.png) image for reference.
+Das RC522 RFID Modul wie folgt mit dem Raspberry verbinden:
 
 | Name | Pin # | Pin name   |
 |------|-------|------------|
@@ -26,5 +14,27 @@ You can use [this](http://i.imgur.com/y7Fnvhq.png) image for reference.
 | RST  | 22    | GPIO25     |
 | 3.3V | 1     | 3V3        |
 
-##Usage
-Import the class by importing MFRC522 in the top of your script. For more info see the examples.
+
+LED wie folgt verbinden:
+
+| Name  | Pin # | Pin name   |
+|-------|-------|------------|
+| GND   | 14    | GND        |
+| Plus  | 11    | GPIO 0     |
+
+Wichtig: Bitte bei der Schaltung der LED einen 220OHM Wiederstand verwenden.
+
+
+2x16 LCD I2C Display wie folgt verbinden:
+
+| Name | Pin # | Pin name   |
+|------|-------|------------|
+| GND  |  6    | GND        |
+| VCC  |  2    | 5.0 VDC    |
+| SDA  |  3    | SDA        |
+| SCL  |  5    | SCL        |
+
+Danach die Entsprechenden Dateien heruterlagen und die Read.py im Terminal mit sudo python Read.py ausführen.
+WICHTI!: Ihr müsst nach dem Ausführen der Read.py zuerst euren Chip an den Leser halten, im Terminal wird euch dann die Entsprechende UID angezeigt aber die Schaltung der LED wird noch nicht funktionieren.
+Diese UID von eurem Chip müsst Ihr im Anschluss in der Read.py an der entsprechenden Stelle eintagen (= in der Read.py in Zeile 54), damit euer Chip auch die Freigabe bekommt die Schaltung auszuführen.
+Speichert die Read.py erneut ab und führt diese noch einmal aus, jetzt sollte die LED geschaltet werden.
